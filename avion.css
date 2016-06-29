@@ -1,0 +1,17 @@
+.asiento{
+	margin: 10px;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	color: white;
+	font-size: 2em;
+	font-weight: bold;
+	padding: 5px;
+}
+.desocupado{
+	background-color: green;
+}
+
+.ocupado{
+	background-color: red;
+}
