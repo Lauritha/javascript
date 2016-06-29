@@ -25,15 +25,27 @@ var avion = {
 var avionContainer = document.getElementById("avion-container");
 avionContainer.innerHTML = "";
 var asientos = avion.asientos;
-var a;
+var a, contador;
+var cajaPeq = document.createElement("div");
+cajaPeq.setAttribute("class", "col-md-4");
+
 for(var i = 0; i < asientos.length; i++){
 	a = document.createElement("div");
 	a.innerHTML = asientos[i].numero;
-
 	if(asientos[i].ocupado){
 		a.setAttribute("class", "ocupado asiento");
 	} else{
 		a.setAttribute("class", "desocupado asiento");
 	}
-	avionContainer.appendChild(a);
+	if(cajaPeq.children.lenght >= 2) {
+		avionContainer.appendChild(cajaPeq);
+		cajaPeq = document.createElement("div");
+		cajaPeq.setAttribute("class", "col-md-4");
+		cajaPeq.appendChild(a);
+	}else{
+		cajaPeq.appendChild(a);
+	}
+	if(i == i < asientos.lenght - 1){
+		avionContainer.appendChild(cajaPeq);
+	}
 };
